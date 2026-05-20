@@ -13,17 +13,20 @@ Antes de arrancar, revisá el material de guía incluido en [`docs/media/`](docs
 | [Convierte_tus_apuntes_PDF_en_retos_Java.m4a](docs/media/Convierte_tus_apuntes_PDF_en_retos_Java.m4a) | Audio | Explicación del flujo de materiales |
 
 ## Requisitos
+
 - JDK 25 (LTS)
 - Maven (o usar el wrapper incluido `./mvnw`)
 - VS Code con Extension Pack for Java, **o** IntelliJ IDEA
 
 ## Abrir en IntelliJ IDEA
+
 1. **File → Open** → seleccioná el archivo `pom.xml` → **Open as Project**.
 2. IntelliJ importa todo automáticamente desde el POM.
 3. Configurá el Project SDK: **File → Project Structure → SDK** → seleccioná JDK 25.
 4. Corrés los tests con el botón ▶ en cualquier archivo de test, o desde el panel **Maven → Lifecycle → test**.
 
 ## Cómo usarlo
+
 1. Abrí el proyecto en VS Code.
 2. Subí el apunte o PDF del tema a `materials/inbox`.
 3. Ejecutá `python3 tools/process_materials.py` para convertir el PDF a Markdown, clasificarlo y generar la hoja de práctica.
@@ -34,6 +37,7 @@ Antes de arrancar, revisá el material de guía incluido en [`docs/media/`](docs
 8. Si el ejercicio actual está en verde, el siguiente se desbloquea automáticamente.
 
 ## Estructura
+
 - `src/main/java`: código de ejercicios y soporte.
 - `src/test/java`: tests que guían la práctica.
 - `materials`: apuntes de la universidad, temas clasificados y plantilla para generar ejercicios.
@@ -47,6 +51,7 @@ Antes de arrancar, revisá el material de guía incluido en [`docs/media/`](docs
 - `Escritorio/Ejercicios-Java`: acceso directo a `materials` desde el escritorio.
 
 ## Flujo recomendado
+
 - Leé primero el apunte o el enunciado del tema.
 - Recoré los tests antes de tocar el código.
 - Implementá una solución pequeña y concreta.
@@ -58,7 +63,9 @@ Antes de arrancar, revisá el material de guía incluido en [`docs/media/`](docs
 - Generá los ejercicios a partir de la hoja de práctica y guardá la fuente ya procesada en `materials/processed`.
 
 ## Objetivo del workspace
+
 La idea es que cada tema de la universidad tenga su propia traducción a práctica:
+
 - material de estudio
 - ejercicios cortos
 - tests que te corrijan
