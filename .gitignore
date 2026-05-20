@@ -2,6 +2,7 @@ target/
 .idea/
 *.iml
 *.pdf
+!docs/media/*.pdf
 .vscode/*.log
 .DS_Store
 __pycache__/
