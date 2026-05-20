@@ -3,9 +3,15 @@
 Workspace personal para estudiar Java con ejercicios guiados, material de la universidad y tests automáticos.
 
 ## Requisitos
-- JDK 17 o superior
-- Maven
-- VS Code con Extension Pack for Java
+- JDK 25 (LTS)
+- Maven (o usar el wrapper incluido `./mvnw`)
+- VS Code con Extension Pack for Java, **o** IntelliJ IDEA
+
+## Abrir en IntelliJ IDEA
+1. **File → Open** → seleccioná el archivo `pom.xml` → **Open as Project**.
+2. IntelliJ importa todo automáticamente desde el POM.
+3. Configurá el Project SDK: **File → Project Structure → SDK** → seleccioná JDK 25.
+4. Corrés los tests con el botón ▶ en cualquier archivo de test, o desde el panel **Maven → Lifecycle → test**.
 
 ## Cómo usarlo
 1. Abrí el proyecto en VS Code.
