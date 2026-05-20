@@ -17,7 +17,40 @@ El objetivo es practicar Java de forma incremental:
 - VS Code con Extension Pack for Java, **o** IntelliJ IDEA
 - utilitario pdftotext disponible en el sistema (lo usa el procesamiento de PDF)
 
-## 2b) Abrir en IntelliJ IDEA
+## 2b) Script de configuración de entorno
+
+Antes de empezar, verificá que tu máquina tiene todo lo necesario ejecutando:
+
+```bash
+bash tools/setup.sh
+```
+
+El script revisa y reporta el estado de cada requisito:
+
+| Componente | Qué verifica | Qué hace si falta |
+| --- | --- | --- |
+| **JDK 25+** | Versión de `java` en PATH | Muestra el comando de instalación |
+| **Maven Wrapper** | Presencia de `./mvnw` en el proyecto | Indica cómo regenerarlo |
+| **Build rápido** | Compila el proyecto con `./mvnw clean test-compile` | Reporta el error de compilación |
+| **pdftotext** | Disponibilidad del utilitario | Muestra comando de instalación (solo necesario para PDFs) |
+| **Python 3** | Disponibilidad de `python3` | Advierte si falta (necesario para los scripts de herramientas) |
+
+Salida esperada cuando todo está bien:
+
+```
+✅ JDK 25 detectado
+✅ mvnw encontrado en el proyecto
+✅ Compilación exitosa
+✅ pdftotext disponible
+✅ Python 3.x
+
+✅ Entorno listo. Podés empezar con:
+   ./mvnw clean test
+```
+
+Si algún componente falla, el script imprime el comando exacto para instalarlo y termina con código de salida distinto de cero.
+
+## 2c) Abrir en IntelliJ IDEA
 
 1. **File → Open** → seleccioná el archivo `pom.xml` → **Open as Project**.
 2. IntelliJ importa la estructura, dependencias y configuración del compilador automáticamente.
