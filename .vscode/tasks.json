@@ -8,6 +8,17 @@
       "args": ["test"],
       "group": "test",
       "problemMatcher": ["$maven"]
+    },
+    {
+      "label": "watch materials inbox",
+      "type": "shell",
+      "command": "python3",
+      "args": ["tools/process_materials.py", "--watch"],
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": []
     }
   ]
 }
