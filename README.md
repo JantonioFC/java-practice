@@ -2,6 +2,16 @@
 
 Workspace personal para estudiar Java con ejercicios guiados, material de la universidad y tests automáticos.
 
+## Recursos de instalación
+
+Antes de arrancar, revisá el material de guía incluido en [`docs/media/`](docs/media/):
+
+| Archivo | Tipo | Descripción |
+| --- | --- | --- |
+| [Entorno_Java_Automatizado.pdf](docs/media/Entorno_Java_Automatizado.pdf) | PDF | Guía de instalación del entorno |
+| [Workspace_Práctica_Java.mp4](docs/media/Workspace_Práctica_Java.mp4) | Video | Recorrido del workspace y flujo de trabajo |
+| [Convierte_tus_apuntes_PDF_en_retos_Java.m4a](docs/media/Convierte_tus_apuntes_PDF_en_retos_Java.m4a) | Audio | Explicación del flujo de materiales |
+
 ## Requisitos
 - JDK 25 (LTS)
 - Maven (o usar el wrapper incluido `./mvnw`)
