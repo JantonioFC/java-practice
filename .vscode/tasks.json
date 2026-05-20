@@ -6,7 +6,16 @@
       "type": "shell",
       "command": "mvn",
       "args": ["test"],
-      "group": "test",
+      "problemMatcher": ["$maven"]
+    },
+    {
+      "label": "practice: test and unlock next",
+      "type": "shell",
+      "command": "mvn test && python3 tools/unlock_next_exercise.py",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
       "problemMatcher": ["$maven"]
     },
     {
@@ -18,6 +27,13 @@
       "runOptions": {
         "runOn": "folderOpen"
       },
+      "problemMatcher": []
+    },
+    {
+      "label": "unlock next exercise",
+      "type": "shell",
+      "command": "python3",
+      "args": ["tools/unlock_next_exercise.py"],
       "problemMatcher": []
     }
   ]

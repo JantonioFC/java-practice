@@ -14,11 +14,8 @@ Workspace personal para estudiar Java con ejercicios guiados, material de la uni
 4. Revisá el resultado en `materials/topics/<tema>/notes` y `materials/topics/<tema>/practice`.
 5. Empezá por `src/main/java/com/jfranco/practice/exercises/Exercise01Basics.java` o por el ejercicio que toque según el tema.
 6. Implementá los métodos marcados como ejercicio.
-7. Corré los tests con:
-
-```bash
-mvn test
-```
+7. Ejecutá la task de VS Code `practice: test and unlock next`.
+8. Si el ejercicio actual está en verde, el siguiente se desbloquea automáticamente.
 
 ## Estructura
 - `src/main/java`: código de ejercicios y soporte.
@@ -37,8 +34,9 @@ mvn test
 - Leé primero el apunte o el enunciado del tema.
 - Recoré los tests antes de tocar el código.
 - Implementá una solución pequeña y concreta.
-- Corré los tests.
+- Ejecutá la task `practice: test and unlock next`.
 - Si falla, corregí según el mensaje y repetí.
+- Cuando el ejercicio actual esté en verde, el siguiente se desbloquea automáticamente.
 - Subí primero los apuntes a `materials/inbox`.
 - Corré el script de procesamiento para convertir, clasificar y generar el material de estudio.
 - Generá los ejercicios a partir de la hoja de práctica y guardá la fuente ya procesada en `materials/processed`.
