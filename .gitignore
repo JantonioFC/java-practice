@@ -1,6 +1,7 @@
 target/
 .idea/
 *.iml
+*.pdf
 .vscode/*.log
 .DS_Store
 __pycache__/
