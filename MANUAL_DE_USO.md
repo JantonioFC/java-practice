@@ -47,7 +47,7 @@ El script revisa y reporta el estado de cada requisito:
 
 Salida esperada cuando todo está bien:
 
-```
+```text
 ✅ JDK 25 detectado
 ✅ mvnw encontrado en el proyecto
 ✅ Compilación exitosa
