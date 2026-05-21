@@ -132,6 +132,34 @@ Cuando ejecutas tools/process_materials.py:
    - hoja de practica (practice)
 5. Mueve el PDF original a la carpeta source del tema.
 
+## 7b) Modo Inteligente (Generación de ejercicios Java por IA)
+
+El workspace cuenta con integración con la API de Gemini para generar de forma 100% DINÁMICA los desafíos de código en Java a partir de tus propios PDFs de la universidad.
+
+### Cómo configurarlo:
+
+1. Conseguí una clave de API (es gratis y toma 10 segundos) en [Google AI Studio](https://aistudio.google.com/).
+2. Creá un archivo `.env` en la raíz del proyecto (donde está el `pom.xml`).
+3. Agregá tu clave en el archivo:
+   ```env
+   GEMINI_API_KEY=tu_clave_de_api_aquí
+   ```
+
+### Cómo funciona el flujo con IA:
+
+1. Colocás un PDF nuevo en `materials/inbox` (ej. `Clase_Condicionales.pdf`).
+2. Ejecutás `python3 tools/process_materials.py`.
+3. El procesador inteligente:
+   - Extraerá la teoría y la guardará en `materials/topics/`.
+   - Detectará automáticamente cuál es el número del siguiente ejercicio Java (ej. `Exercise03`).
+   - Se conectará con la API de Gemini (modelo `gemini-2.5-flash` con salida estructurada JSON).
+   - Generará un ejercicio a medida de 3 métodos (Fácil, Medio, Difícil) con consignas detalladas en español rioplatense (voseo).
+   - Generará una suite de pruebas JUnit 5 robusta con 100% de cobertura.
+   - Guardará ambos archivos como plantilla en `tools/templates/Exercise03[Tema].java` y su Test correspondiente.
+4. Cuando apruebes los tests del ejercicio anterior (en este caso el 02) y ejecutes la task `practice: test and unlock next`, el motor copiará y habilitará el nuevo ejercicio generado por la IA de forma totalmente automática.
+
+> Si no configurás la clave en el archivo `.env`, el script funcionará en modo offline tradicional: generará únicamente los Markdown de teoría, pero omitirá la creación del código Java.
+
 ## 8) Resolucion de problemas
 
 ### 8.1 La task falla en tests
@@ -179,6 +207,12 @@ En .vscode/tasks.json ya estan definidas las tareas principales:
 - Usa los tests como especificacion del comportamiento esperado.
 - Si agregas un ejercicio nuevo, agrega siempre su test guia correspondiente.
 
-## 11) Siguiente mejora sugerida
+## 11) Reiniciar práctica (Comenzar de cero)
 
-Para ampliar la escalera de ejercicios, agrega nuevas entradas en TEMPLATES dentro de tools/unlock_next_exercise.py (definiendo test previo, archivo main y archivo test de cada nuevo nivel).
+Si querés borrar todos los ejercicios desbloqueados (mayores al 01) y empezar la práctica de cero, podés ejecutar:
+
+```bash
+python3 tools/unlock_next_exercise.py --reset
+```
+
+Esto eliminará de forma segura los archivos activos de `src/main` y `src/test` (preservando las plantillas dinámicas generadas en `tools/templates/` para que las puedas volver a desbloquear secuencialmente a medida que pases los tests).
